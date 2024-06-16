@@ -275,7 +275,7 @@ on-arrival: reformist_dissent += 100; center_dissent += 50; labor_dissent += 25;
 Грегор Штрассер становится вице-канцлером и возглавляет НСДАП, разгромив правое крыло. [? if hitler_deported == 0 : Гитлер, раздосадованный случившимся предательством, бросает всё и уезжает в Австрию, полностью теряя все свои позиции. ?]
 
 @far_right_left_fail
-on-arrival: ; pro_republic -= 10; next_election_time = time+5; next_election_month = month + 5; next_election_year = year; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12;
+on-arrival: pro_republic -= 10; next_election_time = time+5; next_election_month = month + 5; next_election_year = year; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12;
 
 @left_coalition
 title: Is a United Left coalition possible?
