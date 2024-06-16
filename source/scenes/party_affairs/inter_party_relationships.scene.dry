@@ -100,7 +100,7 @@ subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1;
-go-to: nsdap1 if ideology != "left"; nsdap2 if ideology = "left"; 
+go-to: nsdap1 if ideology != "left"; nsdap2 if ideology = "left"
 
 При детальном разборе становится очевидно, что нацисты далеко не едины. Левое крыло НСДАП, представленное братьями Штрассерами, пытается противостоять курсу Гитлера, что вполне можно использовать в нашу пользу.
 
