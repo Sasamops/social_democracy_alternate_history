@@ -15,6 +15,7 @@ The SPD cannot govern by itself yet. Because we do not have an electoral majorit
 - @center: Strengthen our bonds with the Catholic Center Party.
 - @kpd: Work towards repairing relationships with the Communist Party.
 - @spd_alone: The SPD can stand alone for now.
+- @left_wing_nsdap: Выйти на связь со Штрассером.
 - @easy_discard
 
 
@@ -93,5 +94,29 @@ However, given the influence of the DVP among the other right-leaning parties[? 
 @spd_alone
 
 Whether it is because we *cannot* or *will not*, we do not make ties with other parties at this moment.
+
+@left_wing_nsdap
+subtitle: -1 resources
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources.
+on-arrival: resources -= 1;
+go-to: nsdap1 if nsdap_relation <= 25; nsdap2 if nsdap_relation <=50; nsdap3 if nsdap_relation >=51
+
+При детальном разборе становится понятно, что нацисты далеко не едины. Левое крыло НСДАП, представленное братьями Штрассерами, пытаются противостоять курсу Гитлера, что вполне можно использовать в свою пользу.
+
+@nsdap1
+on-arrival: nsdap_relation += 5*(1 - dissent)
+
+Учитывая высокую неприязнь нацистов ко всему, что связано с нами, завязать какие-либо отношения трудно. Тем не менее, Отто Штрассер когда-то состоял в СДПГ, что кое-как, но сглаживает его отношение к нам.
+
+@nsdap2
+on-arrival: nsdap_relation += 8*(1 - dissent)
+
+Проведя несколько тайных встреч и обменявшись планами на будущее Германии, мы успешно продвигаемся в том, чтобы убедить, что без социал-демократов ему не одолеть Гитлера.
+
+@nsdap3
+on-arrival: nsdap_relation += 10*(1 - dissent)
+
+Официальная встреча братьев Штрассеров с представителями нашей партии не только ударило по самолюбию Гитлера, но и позволило продвинуться дальше в создании левонацистско-соцдемовского блока.
 
 - @return: Continue...
