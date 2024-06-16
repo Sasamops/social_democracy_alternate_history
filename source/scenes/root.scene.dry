@@ -120,6 +120,7 @@ Q.prussian_government = "SPD";
 // Number of members in 1928 (in thousands)
 // Reichsbanner, stahlhelm, SA, rotfrontkämpferbund
 Q.rb_strength = 2000;
+Q.hitler_deported = 0
 Q.rb_militancy = 0.01;
 Q.women_in_rb = 0;
 Q.rb_banned = 0;
