@@ -258,7 +258,7 @@ on-arrival: chancellor = "Schleicher"; chancellor_party = "I";
 
 Будучи неуверенными в нацистах, реакционный истеблишмент продавливает назначение Курта фон Шлейхера на пост рейхсканцлера. 
 
-Не обладая ни популярностью, ни серьёзной поддержкой, Шлейхер не сможет долго просидеть на своём месте. Понимания это, он идёт на рискованный шаг: он предлагает СДПГ, КПГ и левому крылу НСДАП сформировать правительство.
+Не обладая ни популярностью, ни серьёзной поддержкой, Шлейхер не сможет долго просидеть на своём месте. Понимания это, он идёт на рискованный шаг: он предлагает СДПГ, Партии Центра и левому крылу НСДАП сформировать правительство.
 
 - @far_right_left_success: 
 - @far_right_left_fail: Никто на такое не пойдёт.
@@ -266,12 +266,12 @@ on-arrival: chancellor = "Schleicher"; chancellor_party = "I";
 @far_right_left_success
 title: Сделка с дьяволом.
 subtitle: Мы точно готовы пойти на такое?
-unavailable-subtitle: [? if kpd_relation < 50 : КПГ не согласна на коалицию с нами. ?][? if nsdap_relation < 50: НСДАП не согласна на коалицию с нами. ?]
+unavailable-subtitle: [? if z_relation < 50 : Центр не согласен на коалицию с нами. ?][? if nsdap_relation < 50: НСДАП не согласна на коалицию с нами. ?]
 choose-if: kpd_relation >= 50 and nsdap_relation >= 50
 go-to: surrender if hitler_deported = 0
-on-arrival: reformist_dissent += 100; center_dissent += 50; labor_dissent += 25; in_right_left_coalition = 1; kpd_in_government = 1; spd_in_government = 1; nsdap_in_government = 1; foreign_minister_party = "SPD"; interior_minister_party = "KPD"; justice_minister_party = "SPD"; labor_minister_party = "KPD"; reichswehr_minister_party = "NSDAP"; economic_minister_party = "KPD"; finance_minister_party = "SPD"; agriculture_minister_party = "NSDAP";
+on-arrival: reformist_dissent += 100; center_dissent += 50; labor_dissent += 25; in_right_left_coalition = 1; z_in_government = 1; spd_in_government = 1; nsdap_in_government = 1; foreign_minister_party = "SPD"; interior_minister_party = "Z"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "NSDAP"; economic_minister_party = "Z"; finance_minister_party = "SPD"; agriculture_minister_party = "NSDAP";
 
-План Шлейхера, несмотря на всю его кажущуюся абсурдность, осуществился. Социал-демократы, коммунисты и национал-социалисты преодолели личную неприязнь и согласились войти в правительство, в основном для того, чтобы выбить у Гитлера почву из-под ног. 
+План Шлейхера, несмотря на всю его кажущуюся абсурдность, осуществился. Социал-демократы, католики и национал-социалисты преодолели личную неприязнь и согласились войти в правительство, в основном для того, чтобы выбить у Гитлера почву из-под ног. 
 
 Грегор Штрассер становится вице-канцлером и возглавляет НСДАП, разгромив правое крыло. [? if hitler_deported == 0 : Гитлер, раздосадованный случившимся предательством, бросает всё и уезжает в Австрию, полностью теряя все свои позиции. ?] 
 
