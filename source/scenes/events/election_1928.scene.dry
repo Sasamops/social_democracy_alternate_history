@@ -79,6 +79,7 @@ Q.kpd_coalition_dissent = 0;
 Q.spd_in_government = 0;
 Q.in_weimar_coalition = 0;
 Q.in_grand_coalition = 0;
+Q.in_right_left_coalition = 0;
 Q.in_left_front = 0;
 Q.in_popular_front = 0;
 Q.in_emergency_government = 0;
@@ -253,15 +254,28 @@ on-arrival: chancellor = "Hitler"; chancellor_party = "NSDAP"
 
 
 @far_right_fail
-on-arrival: chancellor = "Schleicher"; chancellor_party = "I"; pro_republic -= 10; next_election_time = time+5; next_election_month = month + 5; next_election_year = year; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12;
+on-arrival: chancellor = "Schleicher"; chancellor_party = "I";
 
-The reactionary establishment is still very skeptical of Hitler, so instead, [+ president +] appoints Kurt von Schleicher, a former general, as chancellor.
+Будучи неуверенными в нацистах, реакционный истеблишмент продавливает назначение Курта фон Шлейхера на пост рейхсканцлера. 
 
-Schleicher's government is deeply unpopular among all parties of the Reichstag. Despite his support for a coalition with the NSDAP, the Nazis want power all to themselves, without Schleicher.
+Не обладая ни популярностью, ни серьёзной поддержкой, Шлейхер не сможет долго просидеть на своём месте. Понимания это, он идёт на рискованный шаг: он предлагает СДПГ, КПГ и левому крылу НСДАП сформировать правительство.
 
-New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
+- @far_right_left_success: Немыслимо.  [+ next_election_month : month +] [+ next_election_year +]
+- @far_right_left_fail: Никто на такое не пойдёт.
 
+@far_right_left_success
+title: Сделка с дьяволом.
+subtitle: Мы точно готовы пойти на такое?
+unavailable-subtitle: [? if kpd_relation < 50 : КПГ не согласна на коалицию с нами. ?][? if nsdap_relation < 50: НСДАП не согласна на коалицию с нами. ?]
+choose-if: kpd_relation >= 50 and nsdap_relation >= 50
+on-arrival: reformist_dissent += 100; center_dissent += 50; labor_dissent += 25; in_right_left_coalition = 1; kpd_in_government = 1; spd_in_government = 1; nsdap_in_government = 1; foreign_minister_party = "SPD"; interior_minister_party = "KPD"; justice_minister_party = "SPD"; labor_minister_party = "KPD"; reichswehr_minister_party = "NSDAP"; economic_minister_party = "KPD"; finance_minister_party = "SPD"; agriculture_minister_party = "NSDAP"; hitler_deported = 1 if hitler_deported = 0;
 
+План Шлейхера, несмотря на всю его кажущуюся абсурдность, осуществился. Социал-демократы, коммунисты и национал-социалисты преодолели личную неприязнь и согласились войти в правительство, в основном для того, чтобы выбить у Гитлера почву из-под ног. 
+
+Грегор Штрассер становится вице-канцлером и возглавляет НСДАП, разгромив правое крыло. [? if hitler_deported == 0 : Гитлер, раздосадованный случившимся предательством, бросает всё и уезжает в Австрию, полностью теряя все свои позиции. ?]
+
+@far_right_left_fail
+on-arrival: ; pro_republic -= 10; next_election_time = time+5; next_election_month = month + 5; next_election_year = year; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12;
 
 @left_coalition
 title: Is a United Left coalition possible?
