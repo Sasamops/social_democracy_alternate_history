@@ -100,9 +100,9 @@ subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1;
-go-to: nsdap1 if nsdap_relation <= 25; nsdap2 if nsdap_relation <=50; nsdap3 if nsdap_relation >=51
+go-to: nsdap1 if nsdap_relation <= 25; nsdap2 if nsdap_relation <=50 and nsdap_relation >= 25; nsdap3 if nsdap_relation >=51
 
-При детальном разборе становится понятно, что нацисты далеко не едины. Левое крыло НСДАП, представленное братьями Штрассерами, пытаются противостоять курсу Гитлера, что вполне можно использовать в свою пользу.
+При детальном разборе становится понятно, что нацисты далеко не едины. Левое крыло НСДАП, представленное братьями Штрассерами, пытается противостоять курсу Гитлера, что вполне можно использовать в нашу пользу.
 
 @nsdap1
 on-arrival: nsdap_relation += 5*(1 - dissent)
@@ -112,7 +112,7 @@ on-arrival: nsdap_relation += 5*(1 - dissent)
 @nsdap2
 on-arrival: nsdap_relation += 8*(1 - dissent)
 
-Проведя несколько тайных встреч и обменявшись планами на будущее Германии, мы успешно продвигаемся в том, чтобы убедить, что без социал-демократов ему не одолеть Гитлера.
+Проведя несколько тайных встреч и обменявшись планами на будущее Германии, мы успешно продвигаемся в том, чтобы убедить левых в НСДАП, что без социал-демократов им не одолеть Гитлера.
 
 @nsdap3
 on-arrival: nsdap_relation += 10*(1 - dissent)
